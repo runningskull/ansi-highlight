@@ -59,7 +59,7 @@ var highlight = module.exports = function (text, col) {
   }).join('')
 }
 
-if(!module.parent) {
+if(module === require.main) {
   console.log(
     highlight(require('fs').readFileSync(process.argv[2], 'utf8'))
   )
